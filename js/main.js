@@ -13,7 +13,8 @@ function limpaGame(li){
     li.forEach(function(event){
         event.classList.remove('x');
         event.classList.remove('o');
-   });
+      });
+      
 };
 btnReset.addEventListener('click', function(){
     contador = 0;
@@ -23,6 +24,8 @@ btnReset.addEventListener('click', function(){
     draw = 0;
     indiceDoPlacar[0].textContent = vitorias1;
     indiceDoPlacar[1].textContent = vitorias2;
+    draw = 0;
+            alert("Jogo Reiniciado");
 });
 li.forEach(function(event){
     //console.log(event.classList.value);
@@ -42,12 +45,15 @@ li.forEach(function(event){
             indiceDoPlacar[0].textContent = vitorias1;
             limpaGame(li);
             draw = 0;
+            alert("Vitoria Jogador 1");
+
         }
         if((li[0].classList[1] == 'o' && li[1].classList[1] == 'o' && li[2].classList[1]== 'o') || (li[3].classList[1] == 'o' && li[4].classList[1] == 'o' && li[5].classList[1] == 'o') || (li[6].classList[1] == 'o' && li[7].classList[1] == 'o' && li[8].classList[1] == 'o') || (li[0].classList[1] == 'o' && li[3].classList[1] == 'o' && li[6].classList[1] == 'o') || (li[1].classList[1] == 'o' && li[4].classList[1] == 'o' && li[7].classList[1] == 'o') || (li[2].classList[1] == 'o' && li[5].classList[1] == 'o' && li[8].classList[1] == 'o') || (li[0].classList[1] == 'o' && li[4].classList[1] == 'o' && li[8].classList[1] == 'o') || (li[2].classList[1] == 'o' && li[4].classList[1] == 'o' && li[6].classList[1] == 'o')){
             vitorias2++;
             indiceDoPlacar[1].textContent = vitorias2;
             limpaGame(li);
             draw = 0;
+            alert("Vitoria Jogador 2");
         }
         if(draw == 9){
             limpaGame(li);
